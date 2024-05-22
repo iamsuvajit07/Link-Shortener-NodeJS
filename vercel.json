@@ -6,15 +6,16 @@
       "use": "@vercel/node"
     }
   ],
-  "functions": {
-    "api/*.js": {
-      "maxDuration": 20
-    }
-  },
   "routes": [
     {
       "src": "/(.*)",
       "dest": "server.js"
     }
-  ]
+  ],
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 10,
+      "memory": 1024
+    }
+  }
 }
