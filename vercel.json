@@ -3,10 +3,14 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node",
-      "config": { "maxLambdaSize": "50mb" }
+      "use": "@vercel/node"
     }
   ],
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 10
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
